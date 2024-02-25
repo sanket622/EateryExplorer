@@ -1,3 +1,15 @@
-#heading{
-    color: red;
+/* src/index.css or src/styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* .shimmer-container{
+    display:flex;
+    flex-wrap:wrap;
 }
+.shimmer-card{
+    margin:10px;
+    width:200px;
+    height:400px;
+    background-color:#f0f0f0;
+} */
