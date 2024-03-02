@@ -11,18 +11,19 @@ const RestaurantMenu = () => {
   const dummy= "Dummy data";
 
   const resInfo = useRestaurantMenu(resId);
-  
+  console.log(resInfo);
 const [showIndex,setShowIndex] = useState(0);
 
   if(resInfo===null) return <Shimmer/>;
   const{name,cuisines,costForTwoMessage} =
-  resInfo?.cards[2]?.card?.card?.info;
+  resInfo?.cards[0]?.card?.card?.info;
 
 
-  const categories= resInfo?.cards[4]?.groupedCard?.
+  const categories= resInfo?.cards[2]?.groupedCard?.
   cardGroupMap?.REGULAR?.cards.filter(c=>c.card?.["card"]?.["@type"]===
   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
   );
+
 
 
   
