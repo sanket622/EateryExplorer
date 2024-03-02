@@ -11,7 +11,6 @@ const RestaurantMenu = () => {
   const dummy= "Dummy data";
 
   const resInfo = useRestaurantMenu(resId);
-  console.log(resInfo);
 const [showIndex,setShowIndex] = useState(0);
 
   if(resInfo===null) return <Shimmer/>;
