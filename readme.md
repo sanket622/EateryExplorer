@@ -63,3 +63,11 @@ import {component} from "path";
 
 - React context
 - props drilling
+
+# Redux Toolkit
+- Install @reduxjs.toolkit and react-redux
+- Build our store
+- connect our store to our app
+- slice(cartSlice)
+- dispatch(action)
+- Selector
