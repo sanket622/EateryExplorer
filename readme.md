@@ -1,3 +1,6 @@
+DEPLOYMENT LINK -->  https://eatery-explorer.vercel.app/
+
+
 #parcel
 -- Dev Build
 -- Local Server
