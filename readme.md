@@ -1,4 +1,5 @@
-DEPLOYMENT LINK -->  https://eatery-explorer.vercel.app/
+DEPLOYMENT LINK -->  [https://eatery-explorer.vercel.app/].  
+          (pre-requisite -> Allow CORS in Browser).
 
 
 #parcel
