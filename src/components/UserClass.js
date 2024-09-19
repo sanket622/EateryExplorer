@@ -1,74 +1,51 @@
 import React from "react";
-class UserClass extends React.Component{
-    constructor(props){
+class UserClass extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
-            userInfo:{
-                login:"Dummy",
-                location:"Default",
+        this.state = {
+            userInfo: {
+                login: "Dummy",
+                location: "Default",
             },
-            count: 0,
-            count2:2
         };
 
 
     }
-  async  componentDidMount(){
-        const data= await fetch("https://api.github.com/users/sanket622");
-        const json= await data.json();
+    async componentDidMount() {
+        const data = await fetch("https://api.github.com/users/sanket622");
+        const json = await data.json();
         this.setState({
-            userInfo:json,
+            userInfo: json,
         });
-    console.log(json);
-    console.log(this.props.name + " child component did mount");
-    this.timer = setInterval(() => {
-     console.log(" NAMASTE REACT OP ");
-    },1000);
     }
-    componentDidUpdate(){
-        console.log("component did update");
-    }
-    componentWillUnmount(){
-        clearInterval(this.timer);
-        console.log("component did unmount");
-    }
- render(){
-    const{name,location,avatar_url,html_url}= this.state.userInfo;
-    const {count} = this.state;
-    return(
-        <div className="user-card" >
-            <h1>count : {count}</h1>
-            <button
-            onClick={() =>{
-                this.setState({
-                    count: this.state.count + 1,
-                });
-            }}
-            style={{
-    backgroundColor: '#3498db',   // Background color
-    color: '#fff',                 // Text color
-    padding: '10px',               // Padding
-    borderRadius: '5px',           // Border radius
-    cursor: 'pointer',             // Cursor style
-    border: 'none',                // Remove default button border
-    outline: 'none',               // Remove button outline
-  }}
-            >
-              Count Increase
-            </button>
-            <img src={avatar_url}/>
-            <h2>Name:{name}</h2>
-            <h3>Location:{location}</h3>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-            <h4 style={{ marginRight: '10px', marginBottom: '0' }}>GITHUB PROFILE:</h4>
-            <a href={html_url} target="_blank" rel="noopener noreferrer" style={{ color: 'blue' }}>
-    {html_url}
-  </a>
-            </div>      
-            <h4>Contact:sanketkumar0068@gmail.com</h4>      
-        </div>
-     );
- };
+    render() {
+        const { name, location, avatar_url, html_url } = this.state.userInfo;
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+            <div className="user-card bg-white p-6 rounded-lg shadow-lg text-center">
+              <h4 className="text-2xl font-bold text-indigo-600 mb-4">
+                WELCOME TO MY GITHUB PROFILE:
+              </h4>
+              <img src={avatar_url} className="mx-auto mb-4 rounded-full" />
+              <h2 className="text-xl">Name: {name}</h2>
+              <h3 className="text-lg">Location: {location}</h3>
+              <div className="flex justify-center items-center space-x-2 mt-2">
+                <h2 className="text-xl">GITHUB LINK:</h2>
+                <a
+                  href={html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700 underline"
+                >
+                  {html_url}
+                </a>
+              </div>
+              <h4 className="text-md mt-4">Contact Email Id: sanketkumar0068@gmail.com</h4>
+            </div>
+          </div>
+          
+        );
+    };
 
 }
 export default UserClass;
